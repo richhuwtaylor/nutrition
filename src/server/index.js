@@ -27,6 +27,7 @@ app.use(function(err, req, res, next) {
     res.send();
 });
 
-app.listen(8080, () => console.log("Listening on port 8080!"));
+const portNumber = process.env.PORT || 8080;
+app.listen(portNumber, () => console.log("Listening on port "+portNumber));
 
 module.exports = app;
