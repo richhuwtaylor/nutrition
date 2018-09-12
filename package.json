@@ -11,7 +11,8 @@
     "build": "webpack --mode production",
     "client": "webpack-dev-server --content-base src --mode development --devtool inline-source-map --hot --inline",
     "server": "nodemon src/server/index.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "npm install && npm run build"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",
