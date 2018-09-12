@@ -5,7 +5,8 @@ const infoRouter = require('./routes/info');
 
 const app = express();
 
-app.use(express.static('public'));
+const dirname = app.get('env') === 'development' ? 'public' : 'dist';
+app.use(express.static(dirname));
 
 
 app.use('/foods', foodsRouter);
